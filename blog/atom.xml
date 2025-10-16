@@ -29,6 +29,23 @@
         <category label="tutor" term="tutor"/>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Nemu expr]]></title>
+        <id>https://stewartbie.github.io/blog/calculate-expr</id>
+        <link href="https://stewartbie.github.io/blog/calculate-expr"/>
+        <updated>2025-10-16T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[提高语义化]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="提高语义化">提高语义化<a href="https://stewartbie.github.io/blog/calculate-expr#%E6%8F%90%E9%AB%98%E8%AF%AD%E4%B9%89%E5%8C%96" class="hash-link" aria-label="Direct link to 提高语义化" title="Direct link to 提高语义化" translate="no">​</a></h2>
+<p>之前写的代码不够语义化，过一段时间再看总觉得有点陌生，比如说条件判断的时候 <code> if(xxx = 1)</code>，不妨用宏定义或者enum，用形式化的字符替代。</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="降低复杂度">降低复杂度<a href="https://stewartbie.github.io/blog/calculate-expr#%E9%99%8D%E4%BD%8E%E5%A4%8D%E6%9D%82%E5%BA%A6" class="hash-link" aria-label="Direct link to 降低复杂度" title="Direct link to 降低复杂度" translate="no">​</a></h2>
+<p>学习了算法课之后，难免会反思之前的程序，事实上一个相对简单的业务，我还是希望能够在一次循环中解决问题。</p>
+<p>具体来说，find_main_op() 我应该使用flag标记是否找到了加减号，并且记录找到的第一个加减或者乘除法的位置。</p>]]></content>
+        <author>
+            <name>Ziqing</name>
+            <uri>https://stewartbie.github.io</uri>
+        </author>
+        <category label="nemu" term="nemu"/>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Welcome]]></title>
         <id>https://stewartbie.github.io/blog/welcome</id>
         <link href="https://stewartbie.github.io/blog/welcome"/>
