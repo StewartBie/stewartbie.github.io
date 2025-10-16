@@ -36,7 +36,7 @@
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="降低复杂度">降低复杂度<a href="https://stewartbie.github.io/zh-Hans/blog/calculate-expr#%E9%99%8D%E4%BD%8E%E5%A4%8D%E6%9D%82%E5%BA%A6" class="hash-link" aria-label="降低复杂度的直接链接" title="降低复杂度的直接链接" translate="no">​</a></h2>
 <p>学习了算法课之后，难免会反思之前的程序，事实上一个相对简单的业务，我还是希望能够在一次循环中解决问题。</p>
 <p>具体来说，find_main_op() 我应该使用flag标记是否找到了加减号，并且记录找到的第一个加减或者乘除法的位置。</p>]]></content:encoded>
-            <category>nemu</category>
+            <category>ysyx</category>
         </item>
         <item>
             <title><![CDATA[Welcome]]></title>
