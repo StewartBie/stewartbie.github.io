@@ -2,11 +2,32 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://stewartbie.github.io/blog</id>
     <title>Z Blog Blog</title>
-    <updated>2021-08-26T00:00:00.000Z</updated>
+    <updated>2025-10-16T01:37:47.054Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://stewartbie.github.io/blog"/>
     <subtitle>Z Blog Blog</subtitle>
     <icon>https://stewartbie.github.io/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[True First Blog]]></title>
+        <id>https://stewartbie.github.io/blog/true-first-blog</id>
+        <link href="https://stewartbie.github.io/blog/true-first-blog"/>
+        <updated>2025-10-16T01:37:47.054Z</updated>
+        <summary type="html"><![CDATA[It's been a while since I first have the idea to build a blog. Though the contents are still full of useless pages. But I'm convinced that I stepped the first time and bad is better than never.]]></summary>
+        <content type="html"><![CDATA[<p>It's been a while since I first have the idea to build a blog. Though the contents are still full of useless pages. But I'm convinced that I stepped the first time and bad is better than never.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="ways-to-start">Ways to Start<a href="https://stewartbie.github.io/blog/true-first-blog#ways-to-start" class="hash-link" aria-label="Direct link to Ways to Start" title="Direct link to Ways to Start" translate="no">​</a></h2>
+<ol>
+<li>Install docusaurus, with npm or yarn. Refer to the document.</li>
+<li>Change some files, and prepare for deployment.</li>
+<li>Create a git repo then push to Github</li>
+<li>yarn deploy</li>
+</ol>]]></content>
+        <author>
+            <name>Ziqing</name>
+            <uri>https://stewartbie.github.io</uri>
+        </author>
+        <category label="Docusaurus" term="Docusaurus"/>
+        <category label="tutor" term="tutor"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Welcome]]></title>
         <id>https://stewartbie.github.io/blog/welcome</id>

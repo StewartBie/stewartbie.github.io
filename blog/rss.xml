@@ -4,10 +4,27 @@
         <title>Z Blog Blog</title>
         <link>https://stewartbie.github.io/blog</link>
         <description>Z Blog Blog</description>
-        <lastBuildDate>Thu, 26 Aug 2021 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 16 Oct 2025 01:37:47 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[True First Blog]]></title>
+            <link>https://stewartbie.github.io/blog/true-first-blog</link>
+            <guid>https://stewartbie.github.io/blog/true-first-blog</guid>
+            <pubDate>Thu, 16 Oct 2025 01:37:47 GMT</pubDate>
+            <description><![CDATA[It's been a while since I first have the idea to build a blog. Though the contents are still full of useless pages. But I'm convinced that I stepped the first time and bad is better than never.]]></description>
+            <content:encoded><![CDATA[<p>It's been a while since I first have the idea to build a blog. Though the contents are still full of useless pages. But I'm convinced that I stepped the first time and bad is better than never.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="ways-to-start">Ways to Start<a href="https://stewartbie.github.io/blog/true-first-blog#ways-to-start" class="hash-link" aria-label="Direct link to Ways to Start" title="Direct link to Ways to Start" translate="no">​</a></h2>
+<ol>
+<li>Install docusaurus, with npm or yarn. Refer to the document.</li>
+<li>Change some files, and prepare for deployment.</li>
+<li>Create a git repo then push to Github</li>
+<li>yarn deploy</li>
+</ol>]]></content:encoded>
+            <category>Docusaurus</category>
+            <category>tutor</category>
+        </item>
         <item>
             <title><![CDATA[Welcome]]></title>
             <link>https://stewartbie.github.io/blog/welcome</link>
