@@ -18,12 +18,17 @@ hola:
   permalink: /hola
   description: Hola tag description
 
-nemu:
+ysyx:
   label: ysyx
   permalink: /ysyx
-  description: PA1
+  description: PA
 
 rl:
-  label:lecture
+  label: lecture
   permalink: /lecture
   description: class notes
+
+tools:
+  label: tools
+  permalink: /tools
+  description: some utils
