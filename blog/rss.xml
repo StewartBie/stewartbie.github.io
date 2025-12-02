@@ -4,10 +4,18 @@
         <title>My Site Blog</title>
         <link>https://your-docusaurus-site.example.com/blog/</link>
         <description>My Site Blog</description>
-        <lastBuildDate>Mon, 01 Dec 2025 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 02 Dec 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Thought About Linked List]]></title>
+            <link>https://your-docusaurus-site.example.com/blog/linked-list/</link>
+            <guid>https://your-docusaurus-site.example.com/blog/linked-list/</guid>
+            <pubDate>Tue, 02 Dec 2025 00:00:00 GMT</pubDate>
+            <category>PL</category>
+            <category>Nemu</category>
+        </item>
         <item>
             <title><![CDATA[Zephyr Blog]]></title>
             <link>https://your-docusaurus-site.example.com/blog/zephyr-blog/</link>
