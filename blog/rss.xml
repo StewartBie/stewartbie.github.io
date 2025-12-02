@@ -13,6 +13,8 @@
             <link>https://your-docusaurus-site.example.com/blog/linked-list/</link>
             <guid>https://your-docusaurus-site.example.com/blog/linked-list/</guid>
             <pubDate>Tue, 02 Dec 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Null page]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="null-page">Null page<a href="https://your-docusaurus-site.example.com/blog/linked-list/#null-page" class="hash-link" aria-label="Direct link to Null page" title="Direct link to Null page" translate="no">​</a></h2>]]></content:encoded>
             <category>PL</category>
             <category>Nemu</category>
         </item>
@@ -21,8 +23,9 @@
             <link>https://your-docusaurus-site.example.com/blog/zephyr-blog/</link>
             <guid>https://your-docusaurus-site.example.com/blog/zephyr-blog/</guid>
             <pubDate>Mon, 01 Dec 2025 00:00:00 GMT</pubDate>
-            <description><![CDATA[1. install with   npm , and then config and install]]></description>
-            <content:encoded><![CDATA[<ol>
+            <description><![CDATA[Deploy blog on my PC]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="deploy-blog-on-my-pc">Deploy blog on my PC<a href="https://your-docusaurus-site.example.com/blog/zephyr-blog/#deploy-blog-on-my-pc" class="hash-link" aria-label="Direct link to Deploy blog on my PC" title="Direct link to Deploy blog on my PC" translate="no">​</a></h2>
+<ol>
 <li class="">install with   <code>npm</code> , and then config and install</li>
 </ol>
 <p>Refer to the <a href="https://docusaurus.io/docs/deployment#deploying-to-github-pages" target="_blank" rel="noopener noreferrer" class="">docs</a>. Add GitHub username and project name.</p>
