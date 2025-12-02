@@ -1,11 +1,11 @@
 ---
 slug: zephyr-blog
-title: Zephyt Blog 
+title: Zephyr Blog 
 authors: [zephyr]
-tags: [docusaurus]
+tags: [docusaurus,pl,rl,nemu]
 ---
 
-# Deploy blog on my PC
+## Deploy blog on my PC
 
 1. install with   `npm` , and then config and install
 

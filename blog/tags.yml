@@ -17,3 +17,18 @@ hola:
   label: Hola
   permalink: /hola
   description: Hola tag description
+
+pl:
+  label: PL 
+  permalink: /pl
+  description: programming language notes
+
+nemu:
+  label: Nemu
+  permalink: /nemu
+  description: works about nemu
+
+rl:
+  label: RL
+  permalink: /rl
+  description: Reinforcement Learning notes
