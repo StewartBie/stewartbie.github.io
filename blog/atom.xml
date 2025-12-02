@@ -8,7 +8,7 @@
     <subtitle>My Site Blog</subtitle>
     <icon>https://your-docusaurus-site.example.com/img/favicon.ico</icon>
     <entry>
-        <title type="html"><![CDATA[Zephyt Blog]]></title>
+        <title type="html"><![CDATA[Zephyr Blog]]></title>
         <id>https://your-docusaurus-site.example.com/blog/zephyr-blog/</id>
         <link href="https://your-docusaurus-site.example.com/blog/zephyr-blog/"/>
         <updated>2025-12-01T00:00:00.000Z</updated>
@@ -22,6 +22,9 @@
             <name>Stewart Bie</name>
         </author>
         <category label="Docusaurus" term="Docusaurus"/>
+        <category label="PL" term="PL"/>
+        <category label="RL" term="RL"/>
+        <category label="Nemu" term="Nemu"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Welcome]]></title>

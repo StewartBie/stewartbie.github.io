@@ -9,7 +9,7 @@
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
         <item>
-            <title><![CDATA[Zephyt Blog]]></title>
+            <title><![CDATA[Zephyr Blog]]></title>
             <link>https://your-docusaurus-site.example.com/blog/zephyr-blog/</link>
             <guid>https://your-docusaurus-site.example.com/blog/zephyr-blog/</guid>
             <pubDate>Mon, 01 Dec 2025 00:00:00 GMT</pubDate>
@@ -20,6 +20,9 @@
 <p>Refer to the <a href="https://docusaurus.io/docs/deployment#deploying-to-github-pages" target="_blank" rel="noopener noreferrer" class="">docs</a>. Add GitHub username and project name.</p>
 <p>Set <code>USE_SSH = true</code>, <code>deploymentBranch: 'gh-pages',</code>, and add a branch named gh-pages for remote repo is also needed.</p>]]></content:encoded>
             <category>Docusaurus</category>
+            <category>PL</category>
+            <category>RL</category>
+            <category>Nemu</category>
         </item>
         <item>
             <title><![CDATA[Welcome]]></title>
