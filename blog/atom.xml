@@ -13,7 +13,28 @@
         <link href="https://your-docusaurus-site.example.com/blog/linked-list/"/>
         <updated>2025-12-02T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Null page]]></summary>
-        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="null-page">Null page<a href="https://your-docusaurus-site.example.com/blog/linked-list/#null-page" class="hash-link" aria-label="Direct link to Null page" title="Direct link to Null page" translate="no">​</a></h2>]]></content>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="null-page">Null page<a href="https://your-docusaurus-site.example.com/blog/linked-list/#null-page" class="hash-link" aria-label="Direct link to Null page" title="Direct link to Null page" translate="no">​</a></h2>
+<div class="language-c codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-c codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">typedef</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">struct</span><span class="token plain"> </span><span class="token class-name">watchpoint</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token keyword" style="color:#00009f">int</span><span class="token plain"> NO</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token keyword" style="color:#00009f">char</span><span class="token plain"> name</span><span class="token punctuation" style="color:#393A34">[</span><span class="token number" style="color:#36acaa">8</span><span class="token punctuation" style="color:#393A34">]</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token class-name">word_t</span><span class="token plain"> value</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token keyword" style="color:#00009f">int</span><span class="token plain"> hit_times</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  bool enable</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token keyword" style="color:#00009f">struct</span><span class="token plain"> </span><span class="token class-name">watchpoint</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">*</span><span class="token plain">next</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><span class="token plain"> WP</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span></code></pre></div></div>
+<p>And <code>WP * head</code> is the head of the Using WPs, <code>WP *free_</code> is the beginning of free WPs.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="how-to-arrange">How to arrange<a href="https://your-docusaurus-site.example.com/blog/linked-list/#how-to-arrange" class="hash-link" aria-label="Direct link to How to arrange" title="Direct link to How to arrange" translate="no">​</a></h2>
+<p>Single Linked List. We find a 2 certain node by traversing from the head one by one. I need these interfaces: <code>remove, add, print_all, check_if_changed</code></p>
+<ul>
+<li class="">
+<p>remove</p>
+<ul>
+<li class="">parameter is the pointer to Node to be removed.</li>
+<li class="">And then, we need to check wether the node exists</li>
+<li class="">generally, we need the last node and the next node.</li>
+<li class="">Specially, if the node to be deleted is the head or the last, we need to handle it more carefully.</li>
+</ul>
+</li>
+<li class="">
+<p>add</p>
+<ul>
+<li class="">This unit is divided into tow functions. One is <code>new_wp()</code>, the other is <code>attach_wp(char *name)</code></li>
+</ul>
+</li>
+</ul>]]></content>
         <author>
             <name>Stewart Bie</name>
         </author>
