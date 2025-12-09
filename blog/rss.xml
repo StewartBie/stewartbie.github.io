@@ -33,9 +33,21 @@
 <p>add</p>
 <ul>
 <li class="">This unit is divided into tow functions. One is <code>new_wp()</code>, the other is <code>attach_wp(char *name)</code></li>
+<li class="">Using <code>new_wp</code> can literally create a new wp. Add a WP from the beginning of the free_ to the tail of the Using.<!-- -->
+<ul>
+<li class="">If there is no free_wp, return .</li>
+<li class="">If there will be no more free_wp, the <code>free_</code> will be NULL. And this message will hint no more free WP in the future.</li>
 </ul>
 </li>
-</ul>]]></content:encoded>
+<li class="">Using <code>attach_wp</code> with a parameter of the WP's name, and the name is the string of a expression.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="about-wp">About WP<a href="https://your-docusaurus-site.example.com/blog/linked-list/#about-wp" class="hash-link" aria-label="Direct link to About WP" title="Direct link to About WP" translate="no">​</a></h2>
+<p>If we assume that only one WP can change in a time, it is accessible to
+return immediately when we detect a change.</p>
+<p>To handle multiple WPs change in one time, we can markdown all the changes both
+<strong>NO</strong> and <strong>new_value</strong>. Then we return the function only when the traverse finished.</p>]]></content:encoded>
             <category>PL</category>
             <category>Nemu</category>
         </item>
