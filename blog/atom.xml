@@ -2,11 +2,35 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://your-docusaurus-site.example.com/blog/</id>
     <title>My Site Blog</title>
-    <updated>2025-12-02T00:00:00.000Z</updated>
+    <updated>2025-12-11T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://your-docusaurus-site.example.com/blog/"/>
     <subtitle>My Site Blog</subtitle>
     <icon>https://your-docusaurus-site.example.com/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[How To Write a Good Makefile]]></title>
+        <id>https://your-docusaurus-site.example.com/blog/Make/</id>
+        <link href="https://your-docusaurus-site.example.com/blog/Make/"/>
+        <updated>2025-12-11T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Variable]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="variable">Variable<a href="https://your-docusaurus-site.example.com/blog/Make/#variable" class="hash-link" aria-label="Direct link to Variable" title="Direct link to Variable" translate="no">​</a></h2>
+<p>Make can read Variables from the <a href="https://stackoverflow.com/questions/39036774/advanced-variable-inheritance-in-gnu-make" target="_blank" rel="noopener noreferrer" class="">Environment</a>
+define Variables <code>SRC = main.c utils.c</code> then use <code>$(SRC)</code> rather than <code>$SRC</code>.
+Only the single alphabet variables can use <code>$S</code> without <code>()</code></p>
+<p><strong>addons</strong>  use <code>SRC += extra.c</code></p>
+<p>Commonly used auto variables:</p>
+<table><thead><tr><th>code</th><th>meaning</th></tr></thead><tbody><tr><td><code>$@</code></td><td>current target</td></tr><tr><td><code>$&lt;</code></td><td>current first dependency</td></tr><tr><td><code>$^</code></td><td>all dependency (auto remove repeated files)</td></tr><tr><td><code>$?</code></td><td>dependencies whose time stamp newer than target</td></tr></tbody></table>
+<div class="language-Makefile language-makefile codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-makefile codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">%.o: %.c</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  $(CC) -c $&lt; -o $@</span><br></span></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="wildcard">Wildcard<a href="https://your-docusaurus-site.example.com/blog/Make/#wildcard" class="hash-link" aria-label="Direct link to Wildcard" title="Direct link to Wildcard" translate="no">​</a></h3>
+<div class="language-Makefile language-makefile codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-makefile codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">$(wildcard PATTERN)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">SRC := $(wildcard *.c)</span><br></span></code></pre></div></div>
+<p>What's more <code>**/*.c</code> is not supported in Makefile.
+To realize this effect we can use <code>shell</code>
+<code>SRC := $(shell find src -name "*.c")</code></p>]]></content>
+        <author>
+            <name>Stewart Bie</name>
+        </author>
+        <category label="Nemu" term="Nemu"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Thought About Linked List]]></title>
         <id>https://your-docusaurus-site.example.com/blog/linked-list/</id>
@@ -46,7 +70,9 @@
 <p>If we assume that only one WP can change in a time, it is accessible to
 return immediately when we detect a change.</p>
 <p>To handle multiple WPs change in one time, we can markdown all the changes both
-<strong>NO</strong> and <strong>new_value</strong>. Then we return the function only when the traverse finished.</p>]]></content>
+<strong>NO</strong> and <strong>new_value</strong>. Then we return the function only when the traverse finished.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="scan-wp">Scan WP<a href="https://your-docusaurus-site.example.com/blog/linked-list/#scan-wp" class="hash-link" aria-label="Direct link to Scan WP" title="Direct link to Scan WP" translate="no">​</a></h3>
+<p>With <code>trace-and-difftest</code>, We can know every watch point whenever they change.</p>]]></content>
         <author>
             <name>Stewart Bie</name>
         </author>
