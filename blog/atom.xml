@@ -2,11 +2,26 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://your-docusaurus-site.example.com/blog/</id>
     <title>My Site Blog</title>
-    <updated>2025-12-11T00:00:00.000Z</updated>
+    <updated>2025-12-15T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://your-docusaurus-site.example.com/blog/"/>
     <subtitle>My Site Blog</subtitle>
     <icon>https://your-docusaurus-site.example.com/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Architecture]]></title>
+        <id>https://your-docusaurus-site.example.com/blog/Architecture/</id>
+        <link href="https://your-docusaurus-site.example.com/blog/Architecture/"/>
+        <updated>2025-12-15T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[UltraSPARC T1 Niagara]]></summary>
+        <content type="html"><![CDATA[<p>UltraSPARC T1 Niagara</p>
+<p>openSPARC open source, for web server , multiple progress</p>
+<p>HyperThreading Intel Pentium-4</p>
+<p>wheel rolling?</p>]]></content>
+        <author>
+            <name>Stewart Bie</name>
+        </author>
+        <category label="lecture" term="lecture"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[How To Write a Good Makefile]]></title>
         <id>https://your-docusaurus-site.example.com/blog/Make/</id>
@@ -22,10 +37,25 @@ Only the single alphabet variables can use <code>$S</code> without <code>()</cod
 <table><thead><tr><th>code</th><th>meaning</th></tr></thead><tbody><tr><td><code>$@</code></td><td>current target</td></tr><tr><td><code>$&lt;</code></td><td>current first dependency</td></tr><tr><td><code>$^</code></td><td>all dependency (auto remove repeated files)</td></tr><tr><td><code>$?</code></td><td>dependencies whose time stamp newer than target</td></tr></tbody></table>
 <div class="language-Makefile language-makefile codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-makefile codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">%.o: %.c</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  $(CC) -c $&lt; -o $@</span><br></span></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="wildcard">Wildcard<a href="https://your-docusaurus-site.example.com/blog/Make/#wildcard" class="hash-link" aria-label="Direct link to Wildcard" title="Direct link to Wildcard" translate="no">​</a></h3>
-<div class="language-Makefile language-makefile codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-makefile codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">$(wildcard PATTERN)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">SRC := $(wildcard *.c)</span><br></span></code></pre></div></div>
+<div class="language-Make language-make codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-make codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">$(wildcard PATTERN)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">SRC := $(wildcard *.c)</span><br></span></code></pre></div></div>
 <p>What's more <code>**/*.c</code> is not supported in Makefile.
 To realize this effect we can use <code>shell</code>
-<code>SRC := $(shell find src -name "*.c")</code></p>]]></content>
+<code>SRC := $(shell find src -name "*.c")</code></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="shell">shell<a href="https://your-docusaurus-site.example.com/blog/Make/#shell" class="hash-link" aria-label="Direct link to shell" title="Direct link to shell" translate="no">​</a></h3>
+<p><code>=</code> and <code>:=</code> will lead to different result and have influence on performance.</p>
+<div class="language-Makefile language-makefile codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-makefile codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># This will run everytime when using $(FILES)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">FILES = $(shell ls) </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># this will run only the first time</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">FILES := $(shell ls) </span><br></span></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="include">include<a href="https://your-docusaurus-site.example.com/blog/Make/#include" class="hash-link" aria-label="Direct link to include" title="Direct link to include" translate="no">​</a></h3>
+<p>Simple COPY-PASTE , same as include in C.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="eg">EG<a href="https://your-docusaurus-site.example.com/blog/Make/#eg" class="hash-link" aria-label="Direct link to EG" title="Direct link to EG" translate="no">​</a></h2>
+<p>The code below is to check whether <code>$(NEMU_HOME)/src/nemu-main.c</code> exists.
+If it doesn't exist, <code>wildcard</code> will return a null string.
+And  tow null strings equal, it will throw an error.</p>
+<div class="language-Make language-make codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-make codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">ifeq ($(wildcard $(NEMU_HOME)/src/nemu-main.c),)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  $(error NEMU_HOME=$(NEMU_HOME) is not a NEMU repo)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">endif</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span></code></pre></div></div>
+<p><strong>include files</strong> If I use <code>include some/files</code> the relative path depends on
+where we run <code>make run</code>, in other word the 'root Makefile'</p>
+<p>The Eg below , in the child Makefile finds a <code>.config</code> file, actually Make will
+find this file in the directory where there is a Makefile who includes this</p>
+<div class="language-Make language-make codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-make codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">ifeq ($(wildcard .config),)</span><br></span></code></pre></div></div>]]></content>
         <author>
             <name>Stewart Bie</name>
         </author>
@@ -47,7 +77,7 @@ To realize this effect we can use <code>shell</code>
 <p>remove</p>
 <ul>
 <li class="">parameter is the pointer to Node to be removed.</li>
-<li class="">And then, we need to check wether the node exists</li>
+<li class="">And then, we need to check whether the node exists</li>
 <li class="">generally, we need the last node and the next node.</li>
 <li class="">Specially, if the node to be deleted is the head or the last, we need to handle it more carefully.</li>
 </ul>
