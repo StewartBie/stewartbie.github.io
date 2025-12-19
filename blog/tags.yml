@@ -32,3 +32,8 @@ rl:
   label: RL
   permalink: /rl
   description: Reinforcement Learning notes
+
+lecture:
+  label: lecture
+  permalink: /lecture
+  description: class notes
