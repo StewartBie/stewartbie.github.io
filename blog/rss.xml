@@ -4,10 +4,29 @@
         <title>My Site Blog</title>
         <link>https://your-docusaurus-site.example.com/blog/</link>
         <description>My Site Blog</description>
-        <lastBuildDate>Fri, 19 Dec 2025 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 25 Jan 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[div zero note]]></title>
+            <link>https://your-docusaurus-site.example.com/blog/DIV0/</link>
+            <guid>https://your-docusaurus-site.example.com/blog/DIV0/</guid>
+            <pubDate>Sun, 25 Jan 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[handle the error]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="handle-the-error">handle the error<a href="https://your-docusaurus-site.example.com/blog/DIV0/#handle-the-error" class="hash-link" aria-label="Direct link to handle the error" title="Direct link to handle the error" translate="no">​</a></h2>
+<p>When nemu running, we may meet errors which may lead to the program dump.
+And sometimes we don't wanna the program fail,
+we need to catch the error and handle it.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="where-it-comes-from">where it comes from<a href="https://your-docusaurus-site.example.com/blog/DIV0/#where-it-comes-from" class="hash-link" aria-label="Direct link to where it comes from" title="Direct link to where it comes from" translate="no">​</a></h2>
+<p>In <code>expr</code>, we may meet <code>p someNumber / 0</code> or in the progress <code>val1 / val2</code>
+and the <code>val2 == 0</code>. It is possible to avoid this happening.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="how-to-handle">how to handle<a href="https://your-docusaurus-site.example.com/blog/DIV0/#how-to-handle" class="hash-link" aria-label="Direct link to how to handle" title="Direct link to how to handle" translate="no">​</a></h2>
+<p>To handle this error, we can check the <code>val2</code> before calculating.
+And add a state flag <code>*success</code> to check whether there is any problem.</p>]]></content:encoded>
+            <category>PL</category>
+            <category>Nemu</category>
+        </item>
         <item>
             <title><![CDATA[Expr and Gen-expr]]></title>
             <link>https://your-docusaurus-site.example.com/blog/Expr/</link>
