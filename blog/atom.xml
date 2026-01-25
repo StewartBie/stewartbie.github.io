@@ -34,6 +34,8 @@ And add a state flag <code>*success</code> to check whether there is any problem
         <id>https://your-docusaurus-site.example.com/blog/Expr/</id>
         <link href="https://your-docusaurus-site.example.com/blog/Expr/"/>
         <updated>2025-12-19T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[some words]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="some-words">some words<a href="https://your-docusaurus-site.example.com/blog/Expr/#some-words" class="hash-link" aria-label="Direct link to some words" title="Direct link to some words" translate="no">​</a></h2>]]></content>
         <author>
             <name>Stewart Bie</name>
         </author>

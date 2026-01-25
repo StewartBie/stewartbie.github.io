@@ -32,6 +32,8 @@ And add a state flag <code>*success</code> to check whether there is any problem
             <link>https://your-docusaurus-site.example.com/blog/Expr/</link>
             <guid>https://your-docusaurus-site.example.com/blog/Expr/</guid>
             <pubDate>Fri, 19 Dec 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[some words]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="some-words">some words<a href="https://your-docusaurus-site.example.com/blog/Expr/#some-words" class="hash-link" aria-label="Direct link to some words" title="Direct link to some words" translate="no">​</a></h2>]]></content:encoded>
             <category>Nemu</category>
         </item>
         <item>
