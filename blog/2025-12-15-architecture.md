@@ -4,7 +4,7 @@ title: Architecture
 authors: [zephyr]
 tags: [lecture]
 ---
-
+<!-- truncate -->
 UltraSPARC T1 Niagara
 
 openSPARC open source, for web server , multiple progress

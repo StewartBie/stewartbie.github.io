@@ -12,7 +12,7 @@ tags: [docusaurus,pl,rl,nemu]
 Refer to the [docs](https://docusaurus.io/docs/deployment#deploying-to-github-pages). Add GitHub username and project name.
 
 Set `USE_SSH = true`, `deploymentBranch: 'gh-pages',`, and add a branch named gh-pages for remote repo is also needed.
-
+<!-- truncate -->
 ## Enable Wake On LAN
 
 Anyway, refer to arch [wiki](https://wiki.archlinux.org/title/Wake-on-LAN)
