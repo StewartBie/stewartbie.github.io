@@ -76,7 +76,8 @@ And add a state flag <code>*success</code> to check whether there is any problem
             <guid>https://your-docusaurus-site.example.com/blog/Expr/</guid>
             <pubDate>Fri, 19 Dec 2025 00:00:00 GMT</pubDate>
             <description><![CDATA[some words]]></description>
-            <content:encoded><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="some-words">some words<a href="https://your-docusaurus-site.example.com/blog/Expr/#some-words" class="hash-link" aria-label="Direct link to some words" title="Direct link to some words" translate="no">​</a></h2>]]></content:encoded>
+            <content:encoded><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="some-words">some words<a href="https://your-docusaurus-site.example.com/blog/Expr/#some-words" class="hash-link" aria-label="Direct link to some words" title="Direct link to some words" translate="no">​</a></h2>
+<p>Use <code>&lt;!truncate&gt;</code> this can hide words under it.</p>]]></content:encoded>
             <category>Nemu</category>
         </item>
         <item>
@@ -261,17 +262,6 @@ And if you want your custom config works, it should set behind <code>99</code> i
 <p>For example, use JSX to create an interactive button:</p>
 <div class="language-js codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-js codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token operator" style="color:#393A34">&lt;</span><span class="token plain">button onClick</span><span class="token operator" style="color:#393A34">=</span><span class="token punctuation" style="color:#393A34">{</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token arrow operator" style="color:#393A34">=&gt;</span><span class="token plain"> </span><span class="token function" style="color:#d73a49">alert</span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">'button clicked!'</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">}</span><span class="token operator" style="color:#393A34">&gt;</span><span class="token maybe-class-name">Click</span><span class="token plain"> me</span><span class="token operator" style="color:#393A34">!</span><span class="token operator" style="color:#393A34">&lt;</span><span class="token operator" style="color:#393A34">/</span><span class="token plain">button</span><span class="token operator" style="color:#393A34">&gt;</span><br></span></code></pre></div></div>
 <button>Click me!</button>]]></content:encoded>
-            <category>Docusaurus</category>
-        </item>
-        <item>
-            <title><![CDATA[First Blog Post]]></title>
-            <link>https://your-docusaurus-site.example.com/blog/first-blog-post/</link>
-            <guid>https://your-docusaurus-site.example.com/blog/first-blog-post/</guid>
-            <pubDate>Tue, 28 May 2019 00:00:00 GMT</pubDate>
-            <description><![CDATA[Lorem ipsum dolor sit amet...]]></description>
-            <content:encoded><![CDATA[<p>Lorem ipsum dolor sit amet...</p>
-<p>...consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>]]></content:encoded>
-            <category>Hola</category>
             <category>Docusaurus</category>
         </item>
     </channel>

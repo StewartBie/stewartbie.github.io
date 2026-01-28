@@ -81,7 +81,8 @@ And add a state flag <code>*success</code> to check whether there is any problem
         <link href="https://your-docusaurus-site.example.com/blog/Expr/"/>
         <updated>2025-12-19T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[some words]]></summary>
-        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="some-words">some words<a href="https://your-docusaurus-site.example.com/blog/Expr/#some-words" class="hash-link" aria-label="Direct link to some words" title="Direct link to some words" translate="no">​</a></h2>]]></content>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="some-words">some words<a href="https://your-docusaurus-site.example.com/blog/Expr/#some-words" class="hash-link" aria-label="Direct link to some words" title="Direct link to some words" translate="no">​</a></h2>
+<p>Use <code>&lt;!truncate&gt;</code> this can hide words under it.</p>]]></content>
         <author>
             <name>Stewart Bie</name>
         </author>
@@ -296,25 +297,6 @@ And if you want your custom config works, it should set behind <code>99</code> i
             <name>Sébastien Lorber</name>
             <uri>https://sebastienlorber.com</uri>
         </author>
-        <category label="Docusaurus" term="Docusaurus"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[First Blog Post]]></title>
-        <id>https://your-docusaurus-site.example.com/blog/first-blog-post/</id>
-        <link href="https://your-docusaurus-site.example.com/blog/first-blog-post/"/>
-        <updated>2019-05-28T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Lorem ipsum dolor sit amet...]]></summary>
-        <content type="html"><![CDATA[<p>Lorem ipsum dolor sit amet...</p>
-<p>...consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>]]></content>
-        <author>
-            <name>Sébastien Lorber</name>
-            <uri>https://sebastienlorber.com</uri>
-        </author>
-        <author>
-            <name>Yangshun Tay</name>
-            <uri>https://linkedin.com/in/yangshun</uri>
-        </author>
-        <category label="Hola" term="Hola"/>
         <category label="Docusaurus" term="Docusaurus"/>
     </entry>
 </feed>
