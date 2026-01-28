@@ -2,11 +2,56 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://your-docusaurus-site.example.com/blog/</id>
     <title>My Site Blog</title>
-    <updated>2026-01-25T00:00:00.000Z</updated>
+    <updated>2026-01-28T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://your-docusaurus-site.example.com/blog/"/>
     <subtitle>My Site Blog</subtitle>
     <icon>https://your-docusaurus-site.example.com/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[get started with idf]]></title>
+        <id>https://your-docusaurus-site.example.com/blog/ESP-IDF/</id>
+        <link href="https://your-docusaurus-site.example.com/blog/ESP-IDF/"/>
+        <updated>2026-01-28T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[ESP32S3 Development]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="esp32s3-development">ESP32S3 Development<a href="https://your-docusaurus-site.example.com/blog/ESP-IDF/#esp32s3-development" class="hash-link" aria-label="Direct link to ESP32S3 Development" title="Direct link to ESP32S3 Development" translate="no">​</a></h2>
+<p>Bike GPS with esp32s3 and in the future esp32c6.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="install-idf">Install IDF<a href="https://your-docusaurus-site.example.com/blog/ESP-IDF/#install-idf" class="hash-link" aria-label="Direct link to Install IDF" title="Direct link to Install IDF" translate="no">​</a></h3>
+<p>Refer to esp <a href="https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/get-started/linux-macos-setup.html" target="_blank" rel="noopener noreferrer" class="">doc</a>
+And it is important to set the ENV Variables <code>IDF_TOOLS_PATH</code> and <code>IDF_PATH</code></p>
+<table><thead><tr><th>Variable</th><th>Usage</th></tr></thead><tbody><tr><td>IDF_PATH</td><td>where idf is installed</td></tr><tr><td>IDF_TOOLS_PATH</td><td>where git repo locates</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="lips-on-linux">lips on Linux<a href="https://your-docusaurus-site.example.com/blog/ESP-IDF/#lips-on-linux" class="hash-link" aria-label="Direct link to lips on Linux" title="Direct link to lips on Linux" translate="no">​</a></h3>
+<p>In some Linux distro, you may have no permission to flash program to esp32,
+<code>ls -l /dev/tty*</code> to check the permission and ownership of <code>ttyACM0</code>, <code>ttyUSB0</code>
+the device may have some other similar names.</p>
+<p>Solutions:</p>
+<ul>
+<li class="">Change permission temperily<!-- -->
+<ul>
+<li class="">use <code>chmod +7 /dev/ttyUSB0</code></li>
+</ul>
+</li>
+<li class="">Add yourself to group <code>uucp</code>
+<ul>
+<li class=""><code>sudo usermod -aG dialout $USER</code></li>
+<li class="">use <code>groups</code> to check what groups you are already in.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="config-in-vscode">Config In VSCode<a href="https://your-docusaurus-site.example.com/blog/ESP-IDF/#config-in-vscode" class="hash-link" aria-label="Direct link to Config In VSCode" title="Direct link to Config In VSCode" translate="no">​</a></h3>
+<p>If you use C/C++ extension, use <code>c_cpp_properties</code>,
+if you use clangd extension, then use <code>compile_commands</code></p>
+<p>What's more some dependencies will be specified in compile time.
+And esp-idf will output the file in 'build' directory,
+we can use it by
+<code>ln -sf build/compile_commands.json compile_commands.json</code>
+to let LSP know where those includes files are.</p>
+<p>In <code>.clangd</code>, type these to let Clangd ignore includes not directly used.</p>
+<div class="language-yaml codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-yaml codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token key atrule" style="color:#00a4db">Diagnostics</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token key atrule" style="color:#00a4db">Suppress</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token punctuation" style="color:#393A34">-</span><span class="token plain"> unused</span><span class="token punctuation" style="color:#393A34">-</span><span class="token plain">includes</span><br></span></code></pre></div></div>]]></content>
+        <author>
+            <name>Stewart Bie</name>
+        </author>
+        <category label="PL" term="PL"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[div zero note]]></title>
         <id>https://your-docusaurus-site.example.com/blog/DIV0/</id>
@@ -22,7 +67,8 @@ we need to catch the error and handle it.</p>
 and the <code>val2 == 0</code>. It is possible to avoid this happening.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="how-to-handle">how to handle<a href="https://your-docusaurus-site.example.com/blog/DIV0/#how-to-handle" class="hash-link" aria-label="Direct link to how to handle" title="Direct link to how to handle" translate="no">​</a></h2>
 <p>To handle this error, we can check the <code>val2</code> before calculating.
-And add a state flag <code>*success</code> to check whether there is any problem.</p>]]></content>
+And add a state flag <code>*success</code> to check whether there is any problem.</p>
+<p>change <code>eval</code></p>]]></content>
         <author>
             <name>Stewart Bie</name>
         </author>
@@ -89,8 +135,8 @@ next instruction to be executed.</p>
 <p>Make can read Variables from the <a href="https://stackoverflow.com/questions/39036774/advanced-variable-inheritance-in-gnu-make" target="_blank" rel="noopener noreferrer" class="">Environment</a>
 define Variables <code>SRC = main.c utils.c</code> then use <code>$(SRC)</code> rather than <code>$SRC</code>.
 Only the single alphabet variables can use <code>$S</code> without <code>()</code></p>
-<p><strong>addons</strong>  use <code>SRC += extra.c</code></p>
-<p>Commonly used auto variables:</p>
+<p><strong>addons</strong>  use <code>SRC += extra.c</code>
+Commonly used auto variables:</p>
 <table><thead><tr><th>code</th><th>meaning</th></tr></thead><tbody><tr><td><code>$@</code></td><td>current target</td></tr><tr><td><code>$&lt;</code></td><td>current first dependency</td></tr><tr><td><code>$^</code></td><td>all dependency (auto remove repeated files)</td></tr><tr><td><code>$?</code></td><td>dependencies whose time stamp newer than target</td></tr></tbody></table>
 <div class="language-Makefile language-makefile codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-makefile codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">%.o: %.c</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  $(CC) -c $&lt; -o $@</span><br></span></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="wildcard">Wildcard<a href="https://your-docusaurus-site.example.com/blog/Make/#wildcard" class="hash-link" aria-label="Direct link to Wildcard" title="Direct link to Wildcard" translate="no">​</a></h3>
