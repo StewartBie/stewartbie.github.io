@@ -132,8 +132,9 @@ next instruction to be executed.</p>
         <id>https://your-docusaurus-site.example.com/blog/Make/</id>
         <link href="https://your-docusaurus-site.example.com/blog/Make/"/>
         <updated>2025-12-11T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Variable]]></summary>
-        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="variable">Variable<a href="https://your-docusaurus-site.example.com/blog/Make/#variable" class="hash-link" aria-label="Direct link to Variable" title="Direct link to Variable" translate="no">​</a></h2>
+        <summary type="html"><![CDATA[Maybe it is a wise choice to read those Makefiles first]]></summary>
+        <content type="html"><![CDATA[<p>Maybe it is a wise choice to read those Makefiles first</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="variable">Variable<a href="https://your-docusaurus-site.example.com/blog/Make/#variable" class="hash-link" aria-label="Direct link to Variable" title="Direct link to Variable" translate="no">​</a></h2>
 <p>Make can read Variables from the <a href="https://stackoverflow.com/questions/39036774/advanced-variable-inheritance-in-gnu-make" target="_blank" rel="noopener noreferrer" class="">Environment</a>
 define Variables <code>SRC = main.c utils.c</code> then use <code>$(SRC)</code> rather than <code>$SRC</code>.
 Only the single alphabet variables can use <code>$S</code> without <code>()</code></p>
