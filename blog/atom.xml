@@ -14,18 +14,18 @@
         <updated>2026-01-28T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[ESP32S3 Development]]></summary>
         <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="esp32s3-development">ESP32S3 Development<a href="https://your-docusaurus-site.example.com/blog/ESP-IDF/#esp32s3-development" class="hash-link" aria-label="Direct link to ESP32S3 Development" title="Direct link to ESP32S3 Development" translate="no">​</a></h2>
-<p>Bike GPS with esp32s3 and in the future esp32c6.</p>
+<p>Bike GPS with esp32s3 and in the future support c6.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="install-idf">Install IDF<a href="https://your-docusaurus-site.example.com/blog/ESP-IDF/#install-idf" class="hash-link" aria-label="Direct link to Install IDF" title="Direct link to Install IDF" translate="no">​</a></h3>
-<p>Refer to esp <a href="https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/get-started/linux-macos-setup.html" target="_blank" rel="noopener noreferrer" class="">doc</a>
-And it is important to set the ENV Variables <code>IDF_TOOLS_PATH</code> and <code>IDF_PATH</code></p>
+<p>Refer to esp <a href="https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/get-started/linux-macos-setup.html" target="_blank" rel="noopener noreferrer" class="">doc</a></p>
+<p>And it is important to set the ENV Variables <code>IDF_TOOLS_PATH</code> and <code>IDF_PATH</code></p>
 <table><thead><tr><th>Variable</th><th>Usage</th></tr></thead><tbody><tr><td>IDF_PATH</td><td>where idf is installed</td></tr><tr><td>IDF_TOOLS_PATH</td><td>where git repo locates</td></tr></tbody></table>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="lips-on-linux">lips on Linux<a href="https://your-docusaurus-site.example.com/blog/ESP-IDF/#lips-on-linux" class="hash-link" aria-label="Direct link to lips on Linux" title="Direct link to lips on Linux" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="tips-on-linux">Tips on Linux<a href="https://your-docusaurus-site.example.com/blog/ESP-IDF/#tips-on-linux" class="hash-link" aria-label="Direct link to Tips on Linux" title="Direct link to Tips on Linux" translate="no">​</a></h3>
 <p>In some Linux distro, you may have no permission to flash program to esp32,
 <code>ls -l /dev/tty*</code> to check the permission and ownership of <code>ttyACM0</code>, <code>ttyUSB0</code>
 the device may have some other similar names.</p>
 <p>Solutions:</p>
 <ul>
-<li class="">Change permission temperily<!-- -->
+<li class="">Change permission temporarily<!-- -->
 <ul>
 <li class="">use <code>chmod +7 /dev/ttyUSB0</code></li>
 </ul>
@@ -38,7 +38,8 @@ the device may have some other similar names.</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="config-in-vscode">Config In VSCode<a href="https://your-docusaurus-site.example.com/blog/ESP-IDF/#config-in-vscode" class="hash-link" aria-label="Direct link to Config In VSCode" title="Direct link to Config In VSCode" translate="no">​</a></h3>
-<p>If you use C/C++ extension, use <code>c_cpp_properties</code>,
+<p>Extensions are all you need. <code>ESP-IDF</code>, <code>clangd</code> or <code>C/C++</code>, <code>CMake Tools</code>
+If you use C/C++ extension, use <code>c_cpp_properties</code>,
 if you use clangd extension, then use <code>compile_commands</code></p>
 <p>What's more some dependencies will be specified in compile time.
 And esp-idf will output the file in 'build' directory,
@@ -143,11 +144,17 @@ Commonly used auto variables:</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="wildcard">Wildcard<a href="https://your-docusaurus-site.example.com/blog/Make/#wildcard" class="hash-link" aria-label="Direct link to Wildcard" title="Direct link to Wildcard" translate="no">​</a></h3>
 <div class="language-Make language-make codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-make codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">$(wildcard PATTERN)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">SRC := $(wildcard *.c)</span><br></span></code></pre></div></div>
 <p>What's more <code>**/*.c</code> is not supported in Makefile.
-To realize this effect we can use <code>shell</code>
+To realize this effect we can use <code>shell</code> command
 <code>SRC := $(shell find src -name "*.c")</code></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="shell">shell<a href="https://your-docusaurus-site.example.com/blog/Make/#shell" class="hash-link" aria-label="Direct link to shell" title="Direct link to shell" translate="no">​</a></h3>
 <p><code>=</code> and <code>:=</code> will lead to different result and have influence on performance.</p>
 <div class="language-Makefile language-makefile codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-makefile codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># This will run everytime when using $(FILES)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">FILES = $(shell ls) </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># this will run only the first time</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">FILES := $(shell ls) </span><br></span></code></pre></div></div>
+<p>What's more, shell commands are called in the directory where we run <code>make</code> commands.
+For example, the script below is written in <code>build.mk</code> and it is included by
+Makefile which locates in other directory, such as <code>~/ysyx-workbench/nemu/tools/gen-expr/Makefile</code>.
+Then we run <code>make</code> in <code>~/ysyx-workbench/nemu/tools/gen-expr/</code>,
+literally <code>BUILD_DIR = ~/ysyx-workbench/nemu/tools/gen-expr/</code></p>
+<div class="language-make codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-make codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">BUILD_DIR = $(shell pwd)</span><br></span></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="include">include<a href="https://your-docusaurus-site.example.com/blog/Make/#include" class="hash-link" aria-label="Direct link to include" title="Direct link to include" translate="no">​</a></h3>
 <p>Simple COPY-PASTE , same as include in C.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="eg">EG<a href="https://your-docusaurus-site.example.com/blog/Make/#eg" class="hash-link" aria-label="Direct link to EG" title="Direct link to EG" translate="no">​</a></h2>
