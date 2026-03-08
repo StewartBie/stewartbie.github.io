@@ -2,13 +2,45 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://your-docusaurus-site.example.com/blog/</id>
     <title>My Site Blog</title>
-    <updated>2026-01-28T00:00:00.000Z</updated>
+    <updated>2026-03-08T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://your-docusaurus-site.example.com/blog/"/>
     <subtitle>My Site Blog</subtitle>
     <icon>https://your-docusaurus-site.example.com/img/favicon.ico</icon>
     <entry>
-        <title type="html"><![CDATA[get started with idf]]></title>
+        <title type="html"><![CDATA[start to use idf]]></title>
+        <id>https://your-docusaurus-site.example.com/blog/ESP-IDF-0/</id>
+        <link href="https://your-docusaurus-site.example.com/blog/ESP-IDF-0/"/>
+        <updated>2026-03-08T00:00:00.000Z</updated>
+        <author>
+            <name>Stewart Bie</name>
+        </author>
+        <category label="PL" term="PL"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Bike-Watch References]]></title>
+        <id>https://your-docusaurus-site.example.com/blog/Bike-Watch/</id>
+        <link href="https://your-docusaurus-site.example.com/blog/Bike-Watch/"/>
+        <updated>2026-03-06T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Try to Copy some projects on GitHub.]]></summary>
+        <content type="html"><![CDATA[<p>Try to Copy some projects on GitHub.</p>
+<p>References:
+<a href="https://github.com/FASTSHIFT/X-TRACK" target="_blank" rel="noopener noreferrer" class="">X-TRACK</a>
+<a href="https://github.com/lspr98/bike-computer-32" target="_blank" rel="noopener noreferrer" class="">esp32-map</a>
+<a href="https://github.com/muktihari/xmltokenizer" target="_blank" rel="noopener noreferrer" class="">xmltokenizer</a></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="follow-esp32-map">Follow esp32-map<a href="https://your-docusaurus-site.example.com/blog/Bike-Watch/#follow-esp32-map" class="hash-link" aria-label="Direct link to Follow esp32-map" title="Direct link to Follow esp32-map" translate="no">​</a></h2>
+<p>Use bbike to create a osm (map) file of Shenzhen.</p>
+<p>Second with Ubuntu-2204 docker, I compile the cpp component,</p>
+<p>Then create a conda env test the bin file.</p>
+<p>TODO:
+Finally complete the esp32 part .</p>]]></content>
+        <author>
+            <name>Stewart Bie</name>
+        </author>
+        <category label="PL" term="PL"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[install idf]]></title>
         <id>https://your-docusaurus-site.example.com/blog/ESP-IDF/</id>
         <link href="https://your-docusaurus-site.example.com/blog/ESP-IDF/"/>
         <updated>2026-01-28T00:00:00.000Z</updated>
@@ -20,8 +52,7 @@
 <p>And it is important to set the ENV Variables <code>IDF_TOOLS_PATH</code> and <code>IDF_PATH</code></p>
 <table><thead><tr><th>Variable</th><th>Usage</th></tr></thead><tbody><tr><td>IDF_PATH</td><td>where idf is installed</td></tr><tr><td>IDF_TOOLS_PATH</td><td>where git repo locates</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="tips-on-linux">Tips on Linux<a href="https://your-docusaurus-site.example.com/blog/ESP-IDF/#tips-on-linux" class="hash-link" aria-label="Direct link to Tips on Linux" title="Direct link to Tips on Linux" translate="no">​</a></h3>
-<p>In some Linux distro, you may have no permission to flash program to esp32,
-<code>ls -l /dev/tty*</code> to check the permission and ownership of <code>ttyACM0</code>, <code>ttyUSB0</code>
+<p>In some Linux distro, you may have no permission to flash program to esp32, <code>ls -l /dev/tty*</code> to check the permission and ownership of <code>ttyACM0</code>, <code>ttyUSB0</code>
 the device may have some other similar names.</p>
 <p>Solutions:</p>
 <ul>

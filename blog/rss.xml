@@ -4,12 +4,38 @@
         <title>My Site Blog</title>
         <link>https://your-docusaurus-site.example.com/blog/</link>
         <description>My Site Blog</description>
-        <lastBuildDate>Wed, 28 Jan 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 08 Mar 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
         <item>
-            <title><![CDATA[get started with idf]]></title>
+            <title><![CDATA[start to use idf]]></title>
+            <link>https://your-docusaurus-site.example.com/blog/ESP-IDF-0/</link>
+            <guid>https://your-docusaurus-site.example.com/blog/ESP-IDF-0/</guid>
+            <pubDate>Sun, 08 Mar 2026 00:00:00 GMT</pubDate>
+            <category>PL</category>
+        </item>
+        <item>
+            <title><![CDATA[Bike-Watch References]]></title>
+            <link>https://your-docusaurus-site.example.com/blog/Bike-Watch/</link>
+            <guid>https://your-docusaurus-site.example.com/blog/Bike-Watch/</guid>
+            <pubDate>Fri, 06 Mar 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Try to Copy some projects on GitHub.]]></description>
+            <content:encoded><![CDATA[<p>Try to Copy some projects on GitHub.</p>
+<p>References:
+<a href="https://github.com/FASTSHIFT/X-TRACK" target="_blank" rel="noopener noreferrer" class="">X-TRACK</a>
+<a href="https://github.com/lspr98/bike-computer-32" target="_blank" rel="noopener noreferrer" class="">esp32-map</a>
+<a href="https://github.com/muktihari/xmltokenizer" target="_blank" rel="noopener noreferrer" class="">xmltokenizer</a></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="follow-esp32-map">Follow esp32-map<a href="https://your-docusaurus-site.example.com/blog/Bike-Watch/#follow-esp32-map" class="hash-link" aria-label="Direct link to Follow esp32-map" title="Direct link to Follow esp32-map" translate="no">​</a></h2>
+<p>Use bbike to create a osm (map) file of Shenzhen.</p>
+<p>Second with Ubuntu-2204 docker, I compile the cpp component,</p>
+<p>Then create a conda env test the bin file.</p>
+<p>TODO:
+Finally complete the esp32 part .</p>]]></content:encoded>
+            <category>PL</category>
+        </item>
+        <item>
+            <title><![CDATA[install idf]]></title>
             <link>https://your-docusaurus-site.example.com/blog/ESP-IDF/</link>
             <guid>https://your-docusaurus-site.example.com/blog/ESP-IDF/</guid>
             <pubDate>Wed, 28 Jan 2026 00:00:00 GMT</pubDate>
@@ -21,8 +47,7 @@
 <p>And it is important to set the ENV Variables <code>IDF_TOOLS_PATH</code> and <code>IDF_PATH</code></p>
 <table><thead><tr><th>Variable</th><th>Usage</th></tr></thead><tbody><tr><td>IDF_PATH</td><td>where idf is installed</td></tr><tr><td>IDF_TOOLS_PATH</td><td>where git repo locates</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="tips-on-linux">Tips on Linux<a href="https://your-docusaurus-site.example.com/blog/ESP-IDF/#tips-on-linux" class="hash-link" aria-label="Direct link to Tips on Linux" title="Direct link to Tips on Linux" translate="no">​</a></h3>
-<p>In some Linux distro, you may have no permission to flash program to esp32,
-<code>ls -l /dev/tty*</code> to check the permission and ownership of <code>ttyACM0</code>, <code>ttyUSB0</code>
+<p>In some Linux distro, you may have no permission to flash program to esp32, <code>ls -l /dev/tty*</code> to check the permission and ownership of <code>ttyACM0</code>, <code>ttyUSB0</code>
 the device may have some other similar names.</p>
 <p>Solutions:</p>
 <ul>
