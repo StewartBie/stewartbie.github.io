@@ -4,10 +4,55 @@
         <title>My Site Blog</title>
         <link>https://your-docusaurus-site.example.com/blog/</link>
         <description>My Site Blog</description>
-        <lastBuildDate>Sun, 08 Mar 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 31 Mar 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[CPP note]]></title>
+            <link>https://your-docusaurus-site.example.com/blog/cpp/</link>
+            <guid>https://your-docusaurus-site.example.com/blog/cpp/</guid>
+            <pubDate>Tue, 31 Mar 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Variadic Macros]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="variadic-macros">Variadic Macros<a href="https://your-docusaurus-site.example.com/blog/cpp/#variadic-macros" class="hash-link" aria-label="Direct link to Variadic Macros" title="Direct link to Variadic Macros" translate="no">​</a></h2>
+<p>Refer to gnu <a href="https://gcc.gnu.org/onlinedocs/cpp/Variadic-Macros.html" target="_blank" rel="noopener noreferrer" class="">macro doc</a>
+EG: the former <code>...</code> will be handled as <code>__VA_ARGS__</code>
+<code>#define eprintf(...) fprintf (stderr, __VA_ARGS__)</code></p>
+<p>If we wanna the variable arguments to be more descriptive,
+we can give it a name:
+<code>#define eprintf(args...) fprintf (stderr, args)</code></p>
+<p>In standard C you should not omit the comma separating the
+named argument from the variable arguments.
+But this is always OK in GNU C and it is fixed in C++20.
+<code>eprintf("success!\n", );</code> -&gt; <code>fprintf(stderr, "success!\n", );</code></p>
+<p>tips: it is a gnu c extension in variadic macro.
+GCC can handle this:  when <code>__VA_ARGS__</code> is NULL last comma
+will be deleted with <code>##__VA_ARGS__</code>
+<code>#define eprintf(fmt, ...) fprintf(stderr, fmt, ##__VA_ARGS__)</code>
+This action depends on compiler and cannot be migrated.</p>]]></content:encoded>
+            <category>tools</category>
+            <category>PL</category>
+        </item>
+        <item>
+            <title><![CDATA[Intall Arch Tips]]></title>
+            <link>https://your-docusaurus-site.example.com/blog/Intall-Arch/</link>
+            <guid>https://your-docusaurus-site.example.com/blog/Intall-Arch/</guid>
+            <pubDate>Thu, 26 Mar 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[I've installed arch several times,]]></description>
+            <content:encoded><![CDATA[<p>I've installed arch several times,
+this time, I tried <code>archinstall</code>
+and learned a lot.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="suggested-subvolume-arrangement-with-btrfs">Suggested Subvolume arrangement with Btrfs<a href="https://your-docusaurus-site.example.com/blog/Intall-Arch/#suggested-subvolume-arrangement-with-btrfs" class="hash-link" aria-label="Direct link to Suggested Subvolume arrangement with Btrfs" title="Direct link to Suggested Subvolume arrangement with Btrfs" translate="no">​</a></h2>
+<table><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td>@</td><td>→</td><td>/</td></tr><tr><td>@home</td><td>→</td><td>/home</td></tr><tr><td>@var</td><td>→</td><td>/var</td></tr><tr><td>@log</td><td>→</td><td>/var/log</td></tr><tr><td>@pkg</td><td>→</td><td>/var/cache/pacman/pkg</td></tr><tr><td>@.snapshots</td><td>→</td><td>快照</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="swap">Swap<a href="https://your-docusaurus-site.example.com/blog/Intall-Arch/#swap" class="hash-link" aria-label="Direct link to Swap" title="Direct link to Swap" translate="no">​</a></h2>
+<p>It's wise to use <code>zram</code> to expand your RAM, and use swap device or
+a swap file to enable sleep or hybernate.</p>
+<p>If you use a swapfile on Btrfs, remember to disable Copy-on-Write
+for this file.
+<code>chattr +C /swap</code>
+check your swap <code>free -m</code> and <code>swapon --show</code></p>]]></content:encoded>
+            <category>tools</category>
+        </item>
         <item>
             <title><![CDATA[start to use idf]]></title>
             <link>https://your-docusaurus-site.example.com/blog/ESP-IDF-0/</link>
@@ -261,6 +306,7 @@ return immediately when we detect a change.</p>
 </ol>
 <p>Refer to the <a href="https://docusaurus.io/docs/deployment#deploying-to-github-pages" target="_blank" rel="noopener noreferrer" class="">docs</a>. Add GitHub username and project name.</p>
 <p>Set <code>USE_SSH = true</code>, <code>deploymentBranch: 'gh-pages',</code>, and add a branch named gh-pages for remote repo is also needed.</p>
+<p>Use <code>yarn build</code> and <code>yarn deploy</code> to build and deploy the blog.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="enable-wake-on-lan">Enable Wake On LAN<a href="https://your-docusaurus-site.example.com/blog/zephyr-blog/#enable-wake-on-lan" class="hash-link" aria-label="Direct link to Enable Wake On LAN" title="Direct link to Enable Wake On LAN" translate="no">​</a></h2>
 <p>Anyway, refer to arch <a href="https://wiki.archlinux.org/title/Wake-on-LAN" target="_blank" rel="noopener noreferrer" class="">wiki</a></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="wired-network">wired network<a href="https://your-docusaurus-site.example.com/blog/zephyr-blog/#wired-network" class="hash-link" aria-label="Direct link to wired network" title="Direct link to wired network" translate="no">​</a></h3>
