@@ -38,3 +38,9 @@ lecture:
   permalink: /lecture
   description: class notes
 
+
+tools:
+  label: tools
+  permalink: /tool
+  description: programming utils
+
