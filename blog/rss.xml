@@ -4,35 +4,10 @@
         <title>My Site Blog</title>
         <link>https://your-docusaurus-site.example.com/blog/</link>
         <description>My Site Blog</description>
-        <lastBuildDate>Tue, 31 Mar 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 26 Mar 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
-        <item>
-            <title><![CDATA[CPP note]]></title>
-            <link>https://your-docusaurus-site.example.com/blog/cpp/</link>
-            <guid>https://your-docusaurus-site.example.com/blog/cpp/</guid>
-            <pubDate>Tue, 31 Mar 2026 00:00:00 GMT</pubDate>
-            <description><![CDATA[Variadic Macros]]></description>
-            <content:encoded><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="variadic-macros">Variadic Macros<a href="https://your-docusaurus-site.example.com/blog/cpp/#variadic-macros" class="hash-link" aria-label="Direct link to Variadic Macros" title="Direct link to Variadic Macros" translate="no">​</a></h2>
-<p>Refer to gnu <a href="https://gcc.gnu.org/onlinedocs/cpp/Variadic-Macros.html" target="_blank" rel="noopener noreferrer" class="">macro doc</a>
-EG: the former <code>...</code> will be handled as <code>__VA_ARGS__</code>
-<code>#define eprintf(...) fprintf (stderr, __VA_ARGS__)</code></p>
-<p>If we wanna the variable arguments to be more descriptive,
-we can give it a name:
-<code>#define eprintf(args...) fprintf (stderr, args)</code></p>
-<p>In standard C you should not omit the comma separating the
-named argument from the variable arguments.
-But this is always OK in GNU C and it is fixed in C++20.
-<code>eprintf("success!\n", );</code> -&gt; <code>fprintf(stderr, "success!\n", );</code></p>
-<p>tips: it is a gnu c extension in variadic macro.
-GCC can handle this:  when <code>__VA_ARGS__</code> is NULL last comma
-will be deleted with <code>##__VA_ARGS__</code>
-<code>#define eprintf(fmt, ...) fprintf(stderr, fmt, ##__VA_ARGS__)</code>
-This action depends on compiler and cannot be migrated.</p>]]></content:encoded>
-            <category>tools</category>
-            <category>PL</category>
-        </item>
         <item>
             <title><![CDATA[Intall Arch Tips]]></title>
             <link>https://your-docusaurus-site.example.com/blog/Intall-Arch/</link>
