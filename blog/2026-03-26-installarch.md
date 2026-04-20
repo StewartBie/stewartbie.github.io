@@ -9,7 +9,7 @@ I've installed arch several times,
 this time, I tried `archinstall`
 and learned a lot.
 
-<!-- truncate -->
+{/* truncate */}
 ## Suggested Subvolume arrangement with Btrfs
 
 | | | |

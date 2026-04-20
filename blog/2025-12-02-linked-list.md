@@ -4,7 +4,7 @@ title: Thought About Linked List
 authors: [zephyr]
 tags: [pl,nemu]
 ---
-<!-- truncate -->
+{/* truncate */}
 ## Null page
 
 ```c

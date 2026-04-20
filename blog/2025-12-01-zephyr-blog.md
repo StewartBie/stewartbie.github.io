@@ -14,7 +14,7 @@ Refer to the [docs](https://docusaurus.io/docs/deployment#deploying-to-github-pa
 Set `USE_SSH = true`, `deploymentBranch: 'gh-pages',`, and add a branch named gh-pages for remote repo is also needed.
 
 Use `yarn build` and `yarn deploy` to build and deploy the blog.
-<!-- truncate -->
+{/* truncate */}
 ## Enable Wake On LAN
 
 Anyway, refer to arch [wiki](https://wiki.archlinux.org/title/Wake-on-LAN)

@@ -11,7 +11,7 @@ References:
 [X-TRACK](https://github.com/FASTSHIFT/X-TRACK)
 [esp32-map](https://github.com/lspr98/bike-computer-32)
 [xmltokenizer](https://github.com/muktihari/xmltokenizer)
-<!--truncate-->
+{/* truncate */}
 ## Follow esp32-map
 
 Use bbike to create a osm (map) file of Shenzhen.

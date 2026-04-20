@@ -1,0 +1,7 @@
+repo: docusaurus 3.9.2
+framework: React + @docusaurus/preset-classic
+notes:
+- 页面路由可直接放在 src/pages 下生成站内页面
+- 静态资源目录为 static/
+- 站点构建命令: yarn build
+- 新增页面: /today-eat (今天吃什么转盘)
