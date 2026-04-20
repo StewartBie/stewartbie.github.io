@@ -2,11 +2,34 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://your-docusaurus-site.example.com/blog/</id>
     <title>My Site Blog</title>
-    <updated>2026-03-26T00:00:00.000Z</updated>
+    <updated>2026-04-20T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://your-docusaurus-site.example.com/blog/"/>
     <subtitle>My Site Blog</subtitle>
     <icon>https://your-docusaurus-site.example.com/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Tool Usage]]></title>
+        <id>https://your-docusaurus-site.example.com/blog/LinuxTool/</id>
+        <link href="https://your-docusaurus-site.example.com/blog/LinuxTool/"/>
+        <updated>2026-04-20T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[SCP]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="scp">SCP<a href="https://your-docusaurus-site.example.com/blog/LinuxTool/#scp" class="hash-link" aria-label="Direct link to SCP" title="Direct link to SCP" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="basic-usage">Basic Usage<a href="https://your-docusaurus-site.example.com/blog/LinuxTool/#basic-usage" class="hash-link" aria-label="Direct link to Basic Usage" title="Direct link to Basic Usage" translate="no">​</a></h3>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">scp [选项] 源文件/目录  用户名@主机:目标路径</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">scp [选项] 用户名@主机:源路径  本地目标路径</span><br></div></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="upload">Upload<a href="https://your-docusaurus-site.example.com/blog/LinuxTool/#upload" class="hash-link" aria-label="Direct link to Upload" title="Direct link to Upload" translate="no">​</a></h3>
+<p>From local to remote.</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># A single file </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">scp ./a.txt user@ipaddr:/home/user/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># To a specific file name</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">scp ./a.txt user@192.168.1.10:/home/user/a_new.txt</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># A dir</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">scp -r ./mydir user@192.168.1.10:/home/user/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">##################################</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="download">Download<a href="https://your-docusaurus-site.example.com/blog/LinuxTool/#download" class="hash-link" aria-label="Direct link to Download" title="Direct link to Download" translate="no">​</a></h3>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># dir</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">scp user@192.168.1.10:/home/user/a.txt ./</span><br></div></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="between-remote">Between Remote<a href="https://your-docusaurus-site.example.com/blog/LinuxTool/#between-remote" class="hash-link" aria-label="Direct link to Between Remote" title="Direct link to Between Remote" translate="no">​</a></h3>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">scp userA@hostA:/path/file userB@hostB:/path/</span><br></div></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="other-frequently-used">other frequently used<a href="https://your-docusaurus-site.example.com/blog/LinuxTool/#other-frequently-used" class="hash-link" aria-label="Direct link to other frequently used" title="Direct link to other frequently used" translate="no">​</a></h3>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># specific Port</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">scp -P 2222 a.txt user@host:/path/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">#################################</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># specify a secret key</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">scp -i ~/.ssh/id_rsa a.txt user@host:/path/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># limit speed  Kbps</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">scp -l 10240 bigfile.iso user@host:/path/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># extend wildcards in remote  machine</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">scp 'user@host:/var/log/*.log' ./</span><br></div></code></pre></div></div>]]></content>
+        <author>
+            <name>Stewart Bie</name>
+        </author>
+        <category label="tools" term="tools"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Intall Arch Tips]]></title>
         <id>https://your-docusaurus-site.example.com/blog/Intall-Arch/</id>
@@ -18,14 +41,18 @@ this time, I tried <code>archinstall</code>
 and learned a lot.</p>
 <!-- -->
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="suggested-subvolume-arrangement-with-btrfs">Suggested Subvolume arrangement with Btrfs<a href="https://your-docusaurus-site.example.com/blog/Intall-Arch/#suggested-subvolume-arrangement-with-btrfs" class="hash-link" aria-label="Direct link to Suggested Subvolume arrangement with Btrfs" title="Direct link to Suggested Subvolume arrangement with Btrfs" translate="no">​</a></h2>
-<table><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td>@</td><td>→</td><td>/</td></tr><tr><td>@home</td><td>→</td><td>/home</td></tr><tr><td>@var</td><td>→</td><td>/var</td></tr><tr><td>@log</td><td>→</td><td>/var/log</td></tr><tr><td>@pkg</td><td>→</td><td>/var/cache/pacman/pkg</td></tr><tr><td>@.snapshots</td><td>→</td><td>快照</td></tr></tbody></table>
+<p>never forget to mount the volume.</p>
+<table><thead><tr><th>Subvolume</th><th>to</th><th>mount point</th></tr></thead><tbody><tr><td>@</td><td>→</td><td>/</td></tr><tr><td>@home</td><td>→</td><td>/home</td></tr><tr><td>@var</td><td>→</td><td>/var</td></tr><tr><td>@log</td><td>→</td><td>/var/log</td></tr><tr><td>@pkg</td><td>→</td><td>/var/cache/pacman/pkg</td></tr><tr><td>@.snapshots</td><td>→</td><td>快照</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="swap">Swap<a href="https://your-docusaurus-site.example.com/blog/Intall-Arch/#swap" class="hash-link" aria-label="Direct link to Swap" title="Direct link to Swap" translate="no">​</a></h2>
 <p>It's wise to use <code>zram</code> to expand your RAM, and use swap device or
 a swap file to enable sleep or hybernate.</p>
 <p>If you use a swapfile on Btrfs, remember to disable Copy-on-Write
 for this file.
 <code>chattr +C /swap</code>
-check your swap <code>free -m</code> and <code>swapon --show</code></p>]]></content>
+check your swap <code>free -m</code> and <code>swapon --show</code></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="systemd-boot">systemd-boot<a href="https://your-docusaurus-site.example.com/blog/Intall-Arch/#systemd-boot" class="hash-link" aria-label="Direct link to systemd-boot" title="Direct link to systemd-boot" translate="no">​</a></h2>
+<p>I don't know how it comes, maybe I forgot to mount /boot, then
+systemd-boot chose to use  UKI , rather than vmlinuz-linux + .img</p>]]></content>
         <author>
             <name>Stewart Bie</name>
         </author>
