@@ -4,10 +4,82 @@
         <title>My Site Blog</title>
         <link>https://your-docusaurus-site.example.com/blog/</link>
         <description>My Site Blog</description>
-        <lastBuildDate>Mon, 20 Apr 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 28 Apr 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[How To Write a Good Makefile]]></title>
+            <link>https://your-docusaurus-site.example.com/blog/Make/</link>
+            <guid>https://your-docusaurus-site.example.com/blog/Make/</guid>
+            <pubDate>Tue, 28 Apr 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Maybe it is a wise choice to read those Makefiles first]]></description>
+            <content:encoded><![CDATA[<p>Maybe it is a wise choice to read those Makefiles first</p>
+<!-- -->
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="variable">Variable<a href="https://your-docusaurus-site.example.com/blog/Make/#variable" class="hash-link" aria-label="Direct link to Variable" title="Direct link to Variable" translate="no">​</a></h2>
+<p>Make can read Variables from the <a href="https://stackoverflow.com/questions/39036774/advanced-variable-inheritance-in-gnu-make" target="_blank" rel="noopener noreferrer" class="">Environment</a>
+define Variables <code>SRC = main.c utils.c</code> then use <code>$(SRC)</code> rather than <code>$SRC</code>.
+Only the single alphabet variables can use <code>$S</code> without <code>()</code></p>
+<p><strong>addons</strong>  use <code>SRC += extra.c</code>
+Commonly used auto variables:</p>
+<table><thead><tr><th>code</th><th>meaning</th></tr></thead><tbody><tr><td><code>$@</code></td><td>current target</td></tr><tr><td><code>$&lt;</code></td><td>current first dependency</td></tr><tr><td><code>$^</code></td><td>all dependency (auto remove repeated files)</td></tr><tr><td><code>$?</code></td><td>dependencies whose time stamp newer than target</td></tr></tbody></table>
+<div class="language-Makefile language-makefile codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-makefile codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">%.o: %.c</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  $(CC) -c $&lt; -o $@</span><br></div></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="wildcard">Wildcard<a href="https://your-docusaurus-site.example.com/blog/Make/#wildcard" class="hash-link" aria-label="Direct link to Wildcard" title="Direct link to Wildcard" translate="no">​</a></h3>
+<div class="language-Make language-make codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-make codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">$(wildcard PATTERN)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">SRC := $(wildcard *.c)</span><br></div></code></pre></div></div>
+<p>What's more <code>**/*.c</code> is not supported in Makefile.
+To realize this effect we can use <code>shell</code> command
+<code>SRC := $(shell find src -name "*.c")</code></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="shell">shell<a href="https://your-docusaurus-site.example.com/blog/Make/#shell" class="hash-link" aria-label="Direct link to shell" title="Direct link to shell" translate="no">​</a></h3>
+<p><code>=</code> and <code>:=</code> will lead to different result and have influence on performance.</p>
+<div class="language-Makefile language-makefile codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-makefile codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># This will run everytime when using $(FILES)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">FILES = $(shell ls) </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># this will run only the first time</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">FILES := $(shell ls) </span><br></div></code></pre></div></div>
+<p>What's more, shell commands are called in the directory where we run <code>make</code> commands.
+For example, the script below is written in <code>build.mk</code> and it is included by
+Makefile which locates in other directory, such as <code>~/ysyx-workbench/nemu/tools/gen-expr/Makefile</code>.
+Then we run <code>make</code> in <code>~/ysyx-workbench/nemu/tools/gen-expr/</code>,
+literally <code>BUILD_DIR = ~/ysyx-workbench/nemu/tools/gen-expr/</code></p>
+<div class="language-make codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-make codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">BUILD_DIR = $(shell pwd)</span><br></div></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="include">include<a href="https://your-docusaurus-site.example.com/blog/Make/#include" class="hash-link" aria-label="Direct link to include" title="Direct link to include" translate="no">​</a></h3>
+<p>Simple COPY-PASTE , same as include in C.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="eg">EG<a href="https://your-docusaurus-site.example.com/blog/Make/#eg" class="hash-link" aria-label="Direct link to EG" title="Direct link to EG" translate="no">​</a></h2>
+<p>The code below is to check whether <code>$(NEMU_HOME)/src/nemu-main.c</code> exists.
+If it doesn't exist, <code>wildcard</code> will return a null string.
+And  tow null strings equal, it will throw an error.</p>
+<div class="language-Make language-make codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-make codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">ifeq ($(wildcard $(NEMU_HOME)/src/nemu-main.c),)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  $(error NEMU_HOME=$(NEMU_HOME) is not a NEMU repo)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">endif</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div></code></pre></div></div>
+<p><strong>include files</strong> If I use <code>include some/files</code> the relative path depends on
+where we run <code>make run</code>, in other word the 'root Makefile'</p>
+<p>The Eg below , in the child Makefile finds a <code>.config</code> file, actually Make will
+find this file in the directory where there is a Makefile who includes this</p>
+<div class="language-Make language-make codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-make codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">ifeq ($(wildcard .config),)</span><br></div></code></pre></div></div>
+<div class="language-Make language-make codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-make codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">$(OBJ_DIR)/%.o: %.c</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  @echo + CC $&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  @mkdir -p $(dir $@)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  @$(CC) $(CFLAGS) -c -o $@ $&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  $(call call_fixdep, $(@:.o=.d), $@)</span><br></div></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="assignment">Assignment<a href="https://your-docusaurus-site.example.com/blog/Make/#assignment" class="hash-link" aria-label="Direct link to Assignment" title="Direct link to Assignment" translate="no">​</a></h3>
+<p>Using <code>=</code>, CC2 will get the last value assigned to CC.
+In other word <code>CC2 = g++</code>.</p>
+<div class="language-Makefile language-makefile codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-makefile codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">  CC = gcc</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  CC2 = $(CC)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  CC = g++</span><br></div></code></pre></div></div>
+<p>Using <code>:=</code>,  <code>CC2=gcc</code>, will get a normal assignment.</p>
+<div class="language-Makefile language-makefile codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-makefile codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">CC := gcc</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">CC2 := $(CC)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">CC := g++</span><br></div></code></pre></div></div>
+<p>Using <code>?=</code>, CC=gcc,
+if it is assigned, it will not get a new value.</p>
+<div class="language-Makefile language-makefile codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-makefile codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">CC ?= gcc</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">CC ?= g++</span><br></div></code></pre></div></div>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="parameters">parameters<a href="https://your-docusaurus-site.example.com/blog/Make/#parameters" class="hash-link" aria-label="Direct link to parameters" title="Direct link to parameters" translate="no">​</a></h2>
+<p>Priority:
+commandline &gt; Makefile &gt; ENV variables</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">make -f FILE # choose the makefile when the name isn't Makefile</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">make -nB # dry run and print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">make -j 8 # run in parallel $nproc</span><br></div></code></pre></div></div>
+<p>Example:
+<code>make -f build.mk</code></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="read-gnu-make-doc">Read GNU Make doc<a href="https://your-docusaurus-site.example.com/blog/Make/#read-gnu-make-doc" class="hash-link" aria-label="Direct link to Read GNU Make doc" title="Direct link to Read GNU Make doc" translate="no">​</a></h2>
+<p>For a recipe, there may be multiple commands.
+And it will be executed one by one, in the order they appear.
+Users use many different shell programs, but recipes
+in makefiles are always interpreted
+by /bin/sh unless the makefile specifies otherwise.
+Refer to doc Section 5.3 page 48.</p>
+<p>Makefiles can be written in make syntax and shell syntax.
+The make program does not try to understand shell syntax:
+it performs only a very few specific translations on the
+content of the recipe before handing it to the shell.</p>]]></content:encoded>
+            <category>Nemu</category>
+            <category>tools</category>
+        </item>
         <item>
             <title><![CDATA[Tool Usage]]></title>
             <link>https://your-docusaurus-site.example.com/blog/LinuxTool/</link>
@@ -52,68 +124,6 @@ check your swap <code>free -m</code> and <code>swapon --show</code></p>
 <p>I don't know how it comes, maybe I forgot to mount /boot, then
 systemd-boot chose to use  UKI , rather than vmlinuz-linux + .img</p>]]></content:encoded>
             <category>tools</category>
-        </item>
-        <item>
-            <title><![CDATA[How To Write a Good Makefile]]></title>
-            <link>https://your-docusaurus-site.example.com/blog/Make/</link>
-            <guid>https://your-docusaurus-site.example.com/blog/Make/</guid>
-            <pubDate>Wed, 11 Mar 2026 00:00:00 GMT</pubDate>
-            <description><![CDATA[Maybe it is a wise choice to read those Makefiles first]]></description>
-            <content:encoded><![CDATA[<p>Maybe it is a wise choice to read those Makefiles first</p>
-<!-- -->
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="variable">Variable<a href="https://your-docusaurus-site.example.com/blog/Make/#variable" class="hash-link" aria-label="Direct link to Variable" title="Direct link to Variable" translate="no">​</a></h2>
-<p>Make can read Variables from the <a href="https://stackoverflow.com/questions/39036774/advanced-variable-inheritance-in-gnu-make" target="_blank" rel="noopener noreferrer" class="">Environment</a>
-define Variables <code>SRC = main.c utils.c</code> then use <code>$(SRC)</code> rather than <code>$SRC</code>.
-Only the single alphabet variables can use <code>$S</code> without <code>()</code></p>
-<p><strong>addons</strong>  use <code>SRC += extra.c</code>
-Commonly used auto variables:</p>
-<table><thead><tr><th>code</th><th>meaning</th></tr></thead><tbody><tr><td><code>$@</code></td><td>current target</td></tr><tr><td><code>$&lt;</code></td><td>current first dependency</td></tr><tr><td><code>$^</code></td><td>all dependency (auto remove repeated files)</td></tr><tr><td><code>$?</code></td><td>dependencies whose time stamp newer than target</td></tr></tbody></table>
-<div class="language-Makefile language-makefile codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-makefile codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">%.o: %.c</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  $(CC) -c $&lt; -o $@</span><br></div></code></pre></div></div>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="wildcard">Wildcard<a href="https://your-docusaurus-site.example.com/blog/Make/#wildcard" class="hash-link" aria-label="Direct link to Wildcard" title="Direct link to Wildcard" translate="no">​</a></h3>
-<div class="language-Make language-make codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-make codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">$(wildcard PATTERN)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">SRC := $(wildcard *.c)</span><br></div></code></pre></div></div>
-<p>What's more <code>**/*.c</code> is not supported in Makefile.
-To realize this effect we can use <code>shell</code> command
-<code>SRC := $(shell find src -name "*.c")</code></p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="shell">shell<a href="https://your-docusaurus-site.example.com/blog/Make/#shell" class="hash-link" aria-label="Direct link to shell" title="Direct link to shell" translate="no">​</a></h3>
-<p><code>=</code> and <code>:=</code> will lead to different result and have influence on performance.</p>
-<div class="language-Makefile language-makefile codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-makefile codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># This will run everytime when using $(FILES)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">FILES = $(shell ls) </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># this will run only the first time</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">FILES := $(shell ls) </span><br></div></code></pre></div></div>
-<p>What's more, shell commands are called in the directory where we run <code>make</code> commands.
-For example, the script below is written in <code>build.mk</code> and it is included by
-Makefile which locates in other directory, such as <code>~/ysyx-workbench/nemu/tools/gen-expr/Makefile</code>.
-Then we run <code>make</code> in <code>~/ysyx-workbench/nemu/tools/gen-expr/</code>,
-literally <code>BUILD_DIR = ~/ysyx-workbench/nemu/tools/gen-expr/</code></p>
-<div class="language-make codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-make codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">BUILD_DIR = $(shell pwd)</span><br></div></code></pre></div></div>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="include">include<a href="https://your-docusaurus-site.example.com/blog/Make/#include" class="hash-link" aria-label="Direct link to include" title="Direct link to include" translate="no">​</a></h3>
-<p>Simple COPY-PASTE , same as include in C.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="eg">EG<a href="https://your-docusaurus-site.example.com/blog/Make/#eg" class="hash-link" aria-label="Direct link to EG" title="Direct link to EG" translate="no">​</a></h2>
-<p>The code below is to check whether <code>$(NEMU_HOME)/src/nemu-main.c</code> exists.
-If it doesn't exist, <code>wildcard</code> will return a null string.
-And  tow null strings equal, it will throw an error.</p>
-<div class="language-Make language-make codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-make codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">ifeq ($(wildcard $(NEMU_HOME)/src/nemu-main.c),)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  $(error NEMU_HOME=$(NEMU_HOME) is not a NEMU repo)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">endif</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div></code></pre></div></div>
-<p><strong>include files</strong> If I use <code>include some/files</code> the relative path depends on
-where we run <code>make run</code>, in other word the 'root Makefile'</p>
-<p>The Eg below , in the child Makefile finds a <code>.config</code> file, actually Make will
-find this file in the directory where there is a Makefile who includes this</p>
-<div class="language-Make language-make codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-make codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">ifeq ($(wildcard .config),)</span><br></div></code></pre></div></div>
-<div class="language-Make language-make codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-make codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">$(OBJ_DIR)/%.o: %.c</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  @echo + CC $&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  @mkdir -p $(dir $@)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  @$(CC) $(CFLAGS) -c -o $@ $&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  $(call call_fixdep, $(@:.o=.d), $@)</span><br></div></code></pre></div></div>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="parameters">parameters<a href="https://your-docusaurus-site.example.com/blog/Make/#parameters" class="hash-link" aria-label="Direct link to parameters" title="Direct link to parameters" translate="no">​</a></h2>
-<p>Priority:
-commandline &gt; Makefile &gt; ENV variables</p>
-<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">make -f FILE # choose the makefile when the name isn't Makefile</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">make -nB # dry run and print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">make -j 8 # run in parallel $nproc</span><br></div></code></pre></div></div>
-<p>Example:
-<code>make -f build.mk</code></p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="read-gnu-make-doc">Read GNU Make doc<a href="https://your-docusaurus-site.example.com/blog/Make/#read-gnu-make-doc" class="hash-link" aria-label="Direct link to Read GNU Make doc" title="Direct link to Read GNU Make doc" translate="no">​</a></h2>
-<p>For a recipe, there may be multiple commands.
-And it will be executed one by one, in the order they appear.
-Users use many different shell programs, but recipes
-in makefiles are always interpreted
-by /bin/sh unless the makefile specifies otherwise.
-Refer to doc Section 5.3 page 48.</p>
-<p>Makefiles can be written in make syntax and shell syntax.
-The make program does not try to understand shell syntax:
-it performs only a very few specific translations on the
-content of the recipe before handing it to the shell.</p>]]></content:encoded>
-            <category>Nemu</category>
         </item>
         <item>
             <title><![CDATA[start to use idf]]></title>
