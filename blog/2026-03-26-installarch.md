@@ -9,12 +9,15 @@ I've installed arch several times,
 this time, I tried `archinstall`
 and learned a lot.
 
-{/* truncate */}
+{/*truncate*/}
+
 ## Suggested Subvolume arrangement with Btrfs
 
-| | | |
+never forget to mount the volume.
+
+| Subvolume| to |mount point |
 |-|-|-|
-|@        |→ |/|
+|@        | → |/|
 |@home    |→ |/home|
 |@var     |→ |/var|
 |@log     |→ |/var/log|
@@ -30,3 +33,8 @@ If you use a swapfile on Btrfs, remember to disable Copy-on-Write
 for this file.
 `chattr +C /swap`
 check your swap `free -m` and `swapon --show`
+
+## systemd-boot
+
+I don't know how it comes, maybe I forgot to mount /boot, then
+systemd-boot chose to use  UKI , rather than vmlinuz-linux + .img
